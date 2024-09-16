@@ -1,0 +1,29 @@
+<!-- Structural Directives -->
+
+<div *ngIf="isVisible">
+  <p>The content is visible because isVisible is true.</p>
+</div>
+
+<ul>
+    <li *ngFor="let item of items">
+        {{item}}
+    </li>
+</ul>
+
+<div [ngSwitch]="currentValue">
+   <p *ngSwitchCase="'case1'"> Case 1 is active</p>
+   <p *ngSwitchCase="'case2'">Case 2 is active</p>
+   <p *ngSwitchDefault>Default case</p>
+</div>
+
+<!-- Attribute Directives -->
+
+<input [(ngModel)]="username" placeholder="Enter your name"/>
+<p>Your username is: {{username}}</p>
+
+<div [ngClass]="{ 'active': isActive, 'disabled': isDisabled }">
+    This div's classes change based on isActive and isDisabled.
+  </div>
+
+  <button [attr.title]="tooltipText">Hover over me</button>
+  <button (click)="onButtonClick()">Click me</button>
